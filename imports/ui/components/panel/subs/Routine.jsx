@@ -9,8 +9,8 @@ class RoutinePanel extends Panel {
     this.state = {
       panelOptions: {
         title: 'My Routine',
-        view: 'Daily'
-      };
+        view: 'Daily',
+      }
     }
   }
   render() {
@@ -18,7 +18,7 @@ class RoutinePanel extends Panel {
     return (
       <div className="panel">
         <div className="panel__title">
-          <h2>{panelOptions.title - panelOptions.view}</h2>
+          <h2>{`${panelOptions.title} - ${panelOptions.view}`}</h2>
         </div>
       </div>
     )
