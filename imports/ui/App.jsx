@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import { Meteor } from 'meteor/meteor';
 import { createContainer } from 'meteor/react-meteor-data';
 
+import RoutinePanel from './components/panel/subs/Routine';
 import Title from './components/title/Title';
 
 class App extends Component {
@@ -11,9 +12,12 @@ class App extends Component {
     return (
       <div className="box">
         <Title/>
+        <Switch>
+          <Route exact path="/" component={RoutinePanel}/>
+        </Switch>
       </div>
     );
   }
 }
 
-export default App;
+export default withRouter(App);
